@@ -11,21 +11,21 @@ const WorkoutSchema = new Schema({
   },
   exercises: [
     {
-      name: {
+      name : {
         type: String,
         enum: ["resistance", "cardio"],
         required : "Enter Exercise Name"
       },
       type: {
-        type: String,
+        type : String,
         trim : true,
         required : "Enter Exercise Type"
       },
-      distance: {
-        type: Number
+      distance : {
+        type : Number
       },
       duration : {
-        type: Number,
+        type : Number,
         required : "Enter Exercise Duration"
       },
       weight: {
@@ -40,8 +40,6 @@ const WorkoutSchema = new Schema({
     }
   ]
 });
-
-
 // Create mongoose model 'workout' and apply workout schema to that model
 const Workout = mongoose.model("Workout", WorkoutSchema);
 

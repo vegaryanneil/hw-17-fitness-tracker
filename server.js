@@ -14,7 +14,7 @@ app.use(express.json());
 // make public folder static 
 app.use(express.static("public"));
 
-// connect to mongodb
+// code added for Mongo Atlas deployment
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/workout",
   { 
@@ -24,6 +24,8 @@ mongoose.connect(
     useFindAndModify: false
   }
 );
+
+    // routes
 app.use(require("./routes/api-routes.js"));
 app.use(require("./routes/html-routes.js"));
 
