@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 // Mongoose Schema
-const schema = mongoose.Schema;
+const Schema = mongoose.Schema;
 
 // Create New Workout
 const workoutSchema = new Schema({
