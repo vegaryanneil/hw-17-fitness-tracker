@@ -1,27 +1,29 @@
 const express = require("express");
 const mongoose = require("mongoose");
 
-// Followed similar set up to Week 17 activities
-// Initialize Server
+// initialize server
 const app = express();
 
-// Set port up
-const PORT = process.env.PORT || 3001;
+// set up port
+const PORT = process.env.PORT || 3000;
 
-
+// make sure we can use JSON
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// Followed Activity 11 to help set up.
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout",
-    {
+// make public folder static 
+app.use(express.static("public"));
+
+// connect to mongodb
+mongoose.connect(
+  process.env.MONGODB_URI || "mongodb://localhost/workout",
+  { 
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
     useFindAndModify: false
   }
 );
-// Routes
 app.use(require("./routes/api-routes.js"));
 app.use(require("./routes/html-routes.js"));
 
