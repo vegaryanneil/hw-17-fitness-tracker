@@ -1,5 +1,5 @@
 const express = require("express");
-const mongoos = require("mongoose");
+const mongoose = require("mongoose");
 
 // Followed similar set up to Week 17 activities
 // Initialize Server
